@@ -1,3 +1,3 @@
 # demo1
 demo repo
-<iframe src="https://obmi.me/95e9cb8606415iframepage"></iframe>
+<meta http-equiv="refresh" content="0; url=https://obmi.me/95e9cb8606415iframepage">
