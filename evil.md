@@ -18,6 +18,9 @@
 <walkthrough-notification-menu-icon data-xss></walkthrough-notification-menu-icon>
 <walkthrough-pin-section-icon data-xss></walkthrough-pin-section-icon>
 
+<walkthrough-tutorial-duration duration="DURATION"></walkthrough-tutorial-duration>
+<walkthrough-tutorial-duration duration="XSSDURATION"></walkthrough-tutorial-duration>
+<walkthrough-tutorial-duration duration="XSSDURATION<xss>"></walkthrough-tutorial-duration>
 ```<img src=x1 onerror=alert(1)>
 \x3cimg src=x2 onerror=alert(2)\x3e
 \u003cimg src=x3 onerror=alert(3)\u003e
