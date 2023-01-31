@@ -1,4 +1,4 @@
-#Header1 <img src=x1 onerror=alert(1)>
+#Header1 <img ng-template="xss" ng-click="xss" src=x1 onerror=alert(1)>
 1
 #Header2 \x3cimg src=x2 onerror=alert(2)\x3e
 1
