@@ -1,10 +1,10 @@
 #Header1 <img src=x1 onerror=alert(1)>
 1
-##Header2 \x3cimg src=x2 onerror=alert(2)\x3e
+#Header2 \x3cimg src=x2 onerror=alert(2)\x3e
 1
-##Header3 \u003cimg src=x3 onerror=alert(3)\u003e
+#Header3 \u003cimg src=x3 onerror=alert(3)\u003e
 1
-##Header3 &lt;img src=x3 onerror=alert(3)&gt;
+#Header3 &lt;img src=x3 onerror=alert(3)&gt;
 
 a
 <img src=x1 onerror=alert(1)>
