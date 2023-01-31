@@ -31,10 +31,9 @@ h
 h1
 <walkthrough-tutorial-duration duration="XSSDURATION"></walkthrough-tutorial-duration>
 h2
-<walkthrough-tutorial-duration duration="XSSDURATION<xss>"></walkthrough-tutorial-duration>
+<walkthrough-tutorial-duration duration="XSSDURATION<xss>\x3cxss\x3e\u003cxss\u003e&lt;xss&gt;"></walkthrough-tutorial-duration>
 h3
 
-<html lang="en"><head>
     <base href="/tutorial/iframe-angular.html">
     <meta charset="utf-8">
     <meta name="referrer" content="no-referrer">
