@@ -56,7 +56,11 @@
    <h1 id="get-started-with-using-google-cloud-cli-in-cloud-shell." data-text="   Get started with using Google Cloud CLI in Cloud Shell. ">
   Get started with using Google Cloud CLI in Cloud Shell.<xss>XSS</xss>
 </h1>
-    
+<img src="xss&quot;&amp;quot;'xss" alt='xss"xss
+                                        xss' />
+  <a href="JaVacript">Link1</a>
+  <a href="JaVacript:alert(2)">Link2</a>
+  <a href="JaVacript&colon;alert(3)">Link3</a>
 <p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
                            title="Install additional components"
                            url='javascript:alert()'>XSS LINK
