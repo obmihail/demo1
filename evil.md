@@ -204,7 +204,7 @@ using the Cloud Shell.</p>
 
 <p><walkthrough-tutorial-card XSS icon="CLOUD_SHELL_SECTION"
                            title="gcloud CLI common commands"
-                           url="sdk/docs/cheatsheet/XSS">
+                           url="sdk/docs/cheatsheet/XSS\x22xss\u0022xss">
   Refer to the gcloud CLI cheat sheet for a list of commonly used
   commands.
 </walkthrough-tutorial-card></p>
