@@ -2,13 +2,13 @@
 
   
 <p><walkthrough-metadata>
-  <meta name="title" content="Quickstart: Introduction to using the gcloud CLI in Cloud Shell." />
-  <meta name="description" content="Run a few core commands in Cloud Shell to get started with using gcloud CLI." />
-  <meta name="keywords" content="gcloud, CLI, Cloud Shell, Google Cloud CLI"/>
-  <meta name="component_id" content="163415" />
+  <meta name="title" content="Quickstart: XSSIntroduction to using the gcloud CLI in Cloud Shell." />
+  <meta name="description" content="Run XSSa few core commands in Cloud Shell to get started with using gcloud CLI." />
+  <meta name="keywords" content="gcloud,XSS CLI, Cloud Shell, Google Cloud CLI"/>
+  <meta name="component_id" content="163XSS415" />
 </walkthrough-metadata></p>
 
-<html devsite>
+<html devsite XSS>
   <head>
     
 
@@ -39,8 +39,8 @@
   
   
 
-    <title>
-  Get started with using Google Cloud CLI in Cloud Shell.
+    <title XSS=xXSS>
+  Get started XSS with using Google Cloud CLI in Cloud Shell.
 </title>
     <meta name='robots' content='noindex' />
     <meta name="no_page_title" value="true" />
@@ -48,38 +48,42 @@
   <body>
 
   
-
+   <style>
+      .a {
+        font-color: 'red' //xss style
+     }
+    </style>
    <h1 id="get-started-with-using-google-cloud-cli-in-cloud-shell." data-text="   Get started with using Google Cloud CLI in Cloud Shell. ">
-  Get started with using Google Cloud CLI in Cloud Shell.
+  Get started with using Google Cloud CLI in Cloud Shell.<xss>XSS</xss>
 </h1>
 
     <section>
-      <h2 id="heading" data-text=" "> </h2>
-      <img src="https://cloud-dot-devsite-v2-prod.appspot.com/walkthroughs/images/intro-page.png" alt>
+      <h2 id="heading" data-text="xss"> </h2>
+      <img src='https://cloud-dot-devsite-v2-prod.appspot.com/walkthroughs/images/intro-page.png?xss"<xss>' alt>
     </section>
 
-    <section class="intro">
+    <section class="introXSS">
       
 
-<p>Learn how to:</p>
+<p XSS=xss>Learn how to:</p>
 
-<ol>
-<li><p>Enable billing in a Google Cloud project.</p></li>
+<ol xss=XSS>
+<li XSS><p>Enable billing in a Google Cloud project.</p></li>
 <li><p>Set some Google Cloud CLI default properties in Cloud Shell.</p></li>
 <li><p>Run gcloud CLI core commands in Cloud Shell.</p></li>
-<li><p>View information about gcloud CLI concepts.</p></li>
+<li><p XSS>View information about gcloud CLI concepts.</p></li>
 <li><p>Do more with gcloud CLI.</p></li>
 </ol>
 
 <p>Estimated time to complete:
-<walkthrough-tutorial-duration duration="5"></walkthrough-tutorial-duration></p>
+<walkthrough-tutorial-duration XSS duration="5"></walkthrough-tutorial-duration></p>
 
 <p>To begin, click <strong>Start</strong>.</p>
 
 
     </section>
 
-    <section class="prereqs">
+    <section XSS class="prereqs">
       
       
     </section>
@@ -107,7 +111,7 @@ Show me</walkthrough-spotlight-pointer>.</p>
 <pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud config set disable_color true
 </code></pre></li>
 <li><p>Unset this property:</p>
-<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud config unset disable_color
+<pre class="prettyprint lang-sh" translate="no" dir="ltr"><code XSS translate="no" dir="ltr">gcloud config unset disable_color
 </code></pre></li>
 <li><p>Read about <code translate="no" dir="ltr">gcloud</code> configurations:</p>
 <pre class="prettyprint lang-sh" translate="no" dir="ltr"><code translate="no" dir="ltr">gcloud topic configurations
@@ -198,9 +202,9 @@ using the Cloud Shell.</p>
   Learn more about gcloud CLI.
 </walkthrough-tutorial-card></p>
 
-<p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
+<p><walkthrough-tutorial-card XSS icon="CLOUD_SHELL_SECTION"
                            title="gcloud CLI common commands"
-                           url="sdk/docs/cheatsheet">
+                           url="sdk/docs/cheatsheet/XSS">
   Refer to the gcloud CLI cheat sheet for a list of commonly used
   commands.
 </walkthrough-tutorial-card></p>
