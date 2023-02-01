@@ -56,7 +56,12 @@
    <h1 id="get-started-with-using-google-cloud-cli-in-cloud-shell." data-text="   Get started with using Google Cloud CLI in Cloud Shell. ">
   Get started with using Google Cloud CLI in Cloud Shell.<xss>XSS</xss>
 </h1>
-
+    
+<p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
+                           title="Install additional components"
+                           url='javascript:alert()'>XSS LINK
+</walkthrough-tutorial-card></p>
+    
     <section>
       <h2 id="heading" data-text="xss"> </h2>
       <img src='https://cloud-dot-devsite-v2-prod.appspot.com/walkthroughs/images/intro-page.png?xss"<xss>' alt>
