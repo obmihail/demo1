@@ -217,7 +217,7 @@ using the Cloud Shell.</p>
 
 <p><walkthrough-tutorial-card icon="CLOUD_SHELL_SECTION"
                            title="Install additional components"
-                           url='sdk/docs/componentsXSSQuote"XSS&quot;xss&lt;xss&gt;'>
+                           url='sdk/docs/componentsXSSQuote/"XSS&quot;xss&lt;xss&gt;'>
   Install additional components such as <code translate="no" dir="ltr">kubectl</code> using the
   gcloud CLI component manager.
 </walkthrough-tutorial-card></p>
